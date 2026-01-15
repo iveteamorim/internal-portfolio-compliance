@@ -1,0 +1,6 @@
+name,owner,markets,status,task_market,task_requirement
+Formula 11,Alicia,EU|US,active,EU,Ingredient disclosure
+Formula 11,Alicia,EU|US,active,US,Label review
+Formula 12,Bruno,EU,draft,EU,Stability data
+Formula 12,Bruno,EU,draft,EU,Safety assessment
+Formula 13,Camila,EU|CA,active,CA,Regulatory filing
