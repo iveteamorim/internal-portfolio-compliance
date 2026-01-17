@@ -76,7 +76,10 @@ export async function fetchDocumentsByPortfolio(
       version: doc.version,
       status: doc.status,
       portfolioItemId: doc.portfolio_item_id,
-      uploadedBy: doc.uploaded_by?.full_name ?? "Unknown",
+      uploadedBy:
+        (
+          doc as { uploaded_by?: Array<{ full_name?: string }> }
+        ).uploaded_by?.[0]?.full_name ?? "Unknown",
       uploadedAt: doc.uploaded_at,
       storageUrl: doc.storage_url
     })) ?? []
@@ -122,7 +125,9 @@ export async function fetchAuditEvents(): Promise<AuditEvent[]> {
   return (
     data?.map((event) => ({
       id: event.id,
-      actor: event.actor?.full_name ?? "Unknown",
+      actor:
+        (event as { actor?: Array<{ full_name?: string }> }).actor?.[0]?.full_name ??
+        "Unknown",
       action: event.action,
       createdAt: new Date(event.created_at).toLocaleString(),
       targetType: event.target_type,
