@@ -37,19 +37,21 @@ export default async function RootLayout({
             </nav>
             <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
               <RoleSwitcher />
-              <form action="/logout" method="post">
-                <button
-                  type="submit"
-                  style={{
-                    padding: "6px 12px",
-                    borderRadius: 8,
-                    border: "1px solid #ccc",
-                    background: "#ffffff"
-                  }}
-                >
-                  Sign out
-                </button>
-              </form>
+              {user ? (
+                <form action="/logout" method="post">
+                  <button
+                    type="submit"
+                    style={{
+                      padding: "6px 12px",
+                      borderRadius: 8,
+                      border: "1px solid #ccc",
+                      background: "#ffffff"
+                    }}
+                  >
+                    Sign out
+                  </button>
+                </form>
+              ) : null}
             </div>
           </header>
           <main>{children}</main>
