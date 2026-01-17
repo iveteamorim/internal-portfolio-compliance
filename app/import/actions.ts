@@ -154,9 +154,9 @@ export async function importMockDocumentsAction() {
   for (let i = 0; i < items.length; i += 1) {
     const item = items[i];
     const legacy = mockLegacyLinks[i];
-    const fileName = `${legacy.title.toLowerCase().replace(/\\s+/g, \"-\")}.txt`;
+    const fileName = `${legacy.title.toLowerCase().replace(/\s+/g, "-")}.txt`;
     const path = `migrations/${item.id}/${Date.now()}-${fileName}`;
-    const content = `Legacy source: ${legacy.legacy}\\nImported for ${item.name}.`;
+    const content = `Legacy source: ${legacy.legacy}\nImported for ${item.name}.`;
 
     const { error: uploadError } = await supabase.storage
       .from("documents")
