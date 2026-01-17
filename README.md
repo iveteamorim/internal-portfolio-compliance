@@ -38,6 +38,13 @@ Add real screenshots in `screenshots/`:
 - `import.png`
 - `activity-log.png`
 
+## Demo
+This is an auth-protected internal tool. The live deployment is provided for UI and flow reference only. See the repository for implementation details.
+
+## Author
+Built by **Ivete Amorim**  
+GitHub: https://github.com/iveteamorim
+
 ## Quick start
 ```
 npm install
