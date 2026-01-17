@@ -23,7 +23,8 @@ export async function getUserRole(email: string | null | undefined): Promise<Rol
     return "viewer";
   }
 
-  const roleName = data.user_roles?.[0]?.roles?.name;
+  const roleName = (data as { user_roles?: Array<{ roles?: { name?: string } }> })
+    .user_roles?.[0]?.roles?.name;
   if (roleName === "admin" || roleName === "operator" || roleName === "viewer") {
     return roleName;
   }
