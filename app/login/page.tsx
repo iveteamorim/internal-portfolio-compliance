@@ -29,7 +29,7 @@ export default function LoginPage() {
     <div className="card" style={{ maxWidth: 420, margin: "48px auto" }}>
       <h2 style={{ marginTop: 0 }}>Sign in</h2>
       <p style={{ color: "#6c645d" }}>
-        Use the Supabase Auth email and password.
+        Sign in with your account.
       </p>
       <form onSubmit={handleSignIn} style={{ display: "grid", gap: 12 }}>
         <input
