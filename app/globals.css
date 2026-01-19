@@ -112,4 +112,8 @@ button {
   nav {
     flex-wrap: wrap;
   }
+
+  .role-meta {
+    display: none;
+  }
 }
