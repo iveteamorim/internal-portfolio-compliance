@@ -30,11 +30,15 @@ export default async function RootLayout({
                 Portfolio & Compliance
               </div>
             </div>
-            <nav>
-              <Link href="/">Dashboard</Link>
-              <Link href="/portfolio">Portfolio</Link>
-              <Link href="/import">Import</Link>
-            </nav>
+            {user ? (
+              <nav>
+                <Link href="/">Dashboard</Link>
+                <Link href="/portfolio">Portfolio</Link>
+                <Link href="/import">Import</Link>
+              </nav>
+            ) : (
+              <div />
+            )}
             <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
               <RoleSwitcher />
               {user ? (
